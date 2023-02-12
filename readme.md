@@ -3,8 +3,8 @@
     
 </p>
 
-<h1 align="center">jfetch</h1>
-<p align="center">A minimal Linux fetch script</p>
+<h1 align="center">Yesfetch</h1>
+<p align="center">A minimal Linux fetch script forked from jfetch</p>
 
 <p align="center">
 <a href="./license"><img src="https://img.shields.io/github/license/Jimmysit0/jfetch?style=for-the-badge&logo=appveyor"></a>
