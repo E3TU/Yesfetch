@@ -11,8 +11,15 @@
 </p>
 
 ### Installing
-**Arch:** [jfetch-git](https://aur.archlinux.org/packages/jfetch-git/) (AUR)  
-**Other Distros:** clone the repo and run `sudo make install`
+
+**Clone the repo**
+```
+git clone https://github.com/E3TU/yesfetch
+```
+**Build**
+```
+sudo make install
+```
 
 ### Customization
 `jfetch` can be configured and customized modifying the source, for example:
