@@ -6,10 +6,10 @@ default:
 
 install:
 	@mkdir -p $(DESTDIR)$(PREFIX)/bin
-	@install -Dm755 jfetch $(DESTDIR)$(PREFIX)/bin/jfetch
+	@install -Dm755 yesfetch $(DESTDIR)$(PREFIX)/bin/yesfetch
 	@mkdir -p $(DESTDIR)$(MANDIR)/man1
-	@cp -p jfetch.1 $(DESTDIR)$(MANDIR)/man1
+	@cp -p yesfetch.1 $(DESTDIR)$(MANDIR)/man1
 
 uninstall:
-	@rm -f $(DESTDIR)$(PREFIX)/bin/jfetch
-	@rm -rf $(DESTDIR)$(MANDIR)/man1/jfetch.1*
+	@rm -f $(DESTDIR)$(PREFIX)/bin/yesfetch
+	@rm -rf $(DESTDIR)$(MANDIR)/man1/yesfetch.1*
