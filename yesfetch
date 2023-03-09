@@ -6,6 +6,12 @@ read -r host < /proc/sys/kernel/hostname
 read -r kernel < /proc/sys/kernel/osrelease
 . /etc/os-release
 
+## de
+  de=$DESKTOP_SESSION;
+
+## tr
+  tr=basename "$(cat "/proc/$PPID/comm")";
+
 ## wm
   [ ! "$wm" ] && [ "$DISPLAY" ] && command -v xprop >/dev/null && {
     id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
@@ -30,6 +36,7 @@ printf '%s\n' "
   ${cyan}sh${white} ~ ${SHELL##*/}
   ${cyan}wm${white} ~ ${wm}
   ${cyan}kr${white} ~ ${ke}
+  ${cyan}de${white} ~ ${de}
 
-  ʕ•ᴥ•ʔ welcome to ${magenta}${host}${reset}, ${magenta}${USER}${reset}
+  welcome to ${magenta}${host}${reset}, ${magenta}${USER}${reset}
 "
