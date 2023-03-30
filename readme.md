@@ -16,6 +16,10 @@
 ```
 git clone https://github.com/E3TU/yesfetch
 ```
+**Navigate to installation folder**
+```
+cd yesfetch
+```
 **Build**
 ```
 sudo make install
