@@ -16,7 +16,7 @@
 ```
 git clone https://github.com/E3TU/yesfetch
 ```
-**Navigate to installation folder**
+**Navigate to the installation folder**
 ```
 cd yesfetch
 ```
