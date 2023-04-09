@@ -1,18 +1,23 @@
 #!/bin/sh
-## hostname
+
+# ARG1=${1:-foo}
+
+# if [ ! -z $1 ]
+# then
+#   echo "$ARG1"
+# fi
+
+#hostname
 read -r host < /proc/sys/kernel/hostname
 
-## os (distro)
+#os (distro)
 read -r kernel < /proc/sys/kernel/osrelease
 . /etc/os-release
 
-## de
+#de
   de=$DESKTOP_SESSION;
 
-## tr
-  tr=basename "$(cat "/proc/$PPID/comm")";
-
-## wm
+#wm
   [ ! "$wm" ] && [ "$DISPLAY" ] && command -v xprop >/dev/null && {
     id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
     id=${id##* }
@@ -20,17 +25,17 @@ read -r kernel < /proc/sys/kernel/osrelease
       grep '^_NET_WM_NAME' | cut -d\" -f 2)
   }
 
-## kernel
+#kernel
         read -r _ _ version _ < /proc/version
         ke=${version%%-*}
 
-## colors
+#colors
 magenta='[35m'
 cyan='[36m'
 white='[37m'
 reset='[0m'
 
-## output
+#output
 printf '%s\n' "
   ${cyan}os${white} ~ ${PRETTY_NAME}
   ${cyan}sh${white} ~ ${SHELL##*/}
