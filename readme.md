@@ -24,7 +24,7 @@ cd yesfetch
 sudo make install
 ```
 
-### Running
+### Usage
 **To run yesfetch simply type:**
 ```
 yesfetch
