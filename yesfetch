@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# ARG1=${1:-foo}
+ARG1=${1:-foo}
 
-# if [ ! -z $1 ]
-# then
-#   echo "$ARG1"
-# fi
+if [ ! -z $1 ]
+then
+  echo "$ARG1"
+fi
 
 #hostname
 read -r host < /proc/sys/kernel/hostname
