@@ -24,6 +24,12 @@ cd yesfetch
 sudo make install
 ```
 
+### Running
+**To run yesfetch simply type:**
+```
+yesfetch
+```
+
 ### Customization
 `yestfetch` can be configured and customized modifying the source, for example:
 ```
