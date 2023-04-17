@@ -15,10 +15,10 @@ read -r kernel < /proc/sys/kernel/osrelease
 . /etc/os-release
 
 #de
-  de=$DESKTOP_SESSION;
+de=$DESKTOP_SESSION;
 
 #up
-  up=$(uptime -p | awk '{ print substr( $0, 4 ) }')
+up=$(uptime -p | awk '{ print substr( $0, 4 ) }' | sed 's|[,]||g')
 
 
 #wm
@@ -30,8 +30,8 @@ read -r kernel < /proc/sys/kernel/osrelease
   }
 
 #kernel
-        read -r _ _ version _ < /proc/version
-        ke=${version%%-*}
+read -r _ _ version _ < /proc/version
+ke=${version%%-*}
 
 #colors
 magenta='[35m'
