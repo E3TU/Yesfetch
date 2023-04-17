@@ -17,6 +17,10 @@ read -r kernel < /proc/sys/kernel/osrelease
 #de
   de=$DESKTOP_SESSION;
 
+#up
+  up=$(uptime -p | awk '{ print substr( $0, 4 ) }')
+
+
 #wm
   [ ! "$wm" ] && [ "$DISPLAY" ] && command -v xprop >/dev/null && {
     id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
@@ -39,9 +43,10 @@ reset='[0m'
 printf '%s\n' "
   ${cyan}os${white} ~ ${PRETTY_NAME}
   ${cyan}sh${white} ~ ${SHELL##*/}
+  ${cyan}de${white} ~ ${de}
   ${cyan}wm${white} ~ ${wm}
   ${cyan}kr${white} ~ ${ke}
-  ${cyan}de${white} ~ ${de}
+  ${cyan}up${white} ~ ${up}
 
   welcome to ${magenta}${host}${reset}, ${magenta}${USER}${reset}
 "
