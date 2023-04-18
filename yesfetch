@@ -1,11 +1,8 @@
 #!/bin/sh
 
-ARG1=${1:-foo}
-
-if [ ! -z $1 ]
-then
-  echo "$ARG1"
-fi
+#optional arguments
+# ARG1=${1:-color1}
+# ARG2=${2:-color2}
 
 #hostname
 read -r host < /proc/sys/kernel/hostname
@@ -34,19 +31,25 @@ read -r _ _ version _ < /proc/version
 ke=${version%%-*}
 
 #colors
-magenta='[35m'
-cyan='[36m'
+welcometext='[35m'
+infotext='[36m'
 white='[37m'
 reset='[0m'
 
+
+# if [ ! -z $1 ]
+# then
+#   welcometext='[32m'
+# fi
+
 #output
 printf '%s\n' "
-  ${cyan}os${white} ~ ${PRETTY_NAME}
-  ${cyan}sh${white} ~ ${SHELL##*/}
-  ${cyan}de${white} ~ ${de}
-  ${cyan}wm${white} ~ ${wm}
-  ${cyan}kr${white} ~ ${ke}
-  ${cyan}up${white} ~ ${up}
+  ${infotext}os${white} ~ ${PRETTY_NAME}
+  ${infotext}sh${white} ~ ${SHELL##*/}
+  ${infotext}de${white} ~ ${de}
+  ${infotext}wm${white} ~ ${wm}
+  ${infotext}kr${white} ~ ${ke}
+  ${infotext}up${white} ~ ${up}
 
-  welcome to ${magenta}${host}${reset}, ${magenta}${USER}${reset}
+  welcome to ${welcometext}${host}${reset}, ${welcometext}${USER}${reset}
 "
