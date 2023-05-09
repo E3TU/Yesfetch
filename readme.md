@@ -31,7 +31,7 @@ yesfetch
 ```
 
 ### Customization
-`yestfetch` can be configured and customized modifying the source, for example:
+`yesfetch` can be configured and customized modifying the source, for example:
 ```
 wm = ${wm}
 ```
