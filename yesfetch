@@ -1,8 +1,9 @@
 #!/bin/sh
 
 #optional arguments
-# ARG1=${1:-color1}
-# ARG2=${2:-color2}
+ARG1=${1:-color1}
+colorname=${2:-}
+
 
 #hostname
 read -r host < /proc/sys/kernel/hostname
@@ -31,16 +32,54 @@ read -r _ _ version _ < /proc/version
 ke=${version%%-*}
 
 #colors
-welcometext='[35m'
-infotext='[36m'
 white='[37m'
+red='[31m'
+green='[32m'
+yellow='[33m'
+blue='[34m'
+cyan='[36m'
+purple='[35m'
+
+#Default colors
+welcometext=$green
+infotext=$blue
 reset='[0m'
 
 
-# if [ ! -z $1 ]
-# then
-#   welcometext='[32m'
-# fi
+if [ "$colorname" = "white" ]; then
+  echo "test"
+  welcometext=$white
+fi
+
+if [ "$colorname" = "red" ]; then
+  echo "test"
+  welcometext=$red
+fi
+
+if [ "$colorname" = "green" ]; then
+  echo "test"
+  welcometext=$green
+fi
+
+if [ "$colorname" = "yellow" ]; then
+  echo "test"
+  welcometext=$yellow
+fi
+
+if [ "$colorname" = "blue" ]; then
+  echo "test"
+  welcometext=$blue
+fi
+
+if [ "$colorname" = "cyan" ]; then
+  echo "test"
+  welcometext=$cyan
+fi
+
+if [ "$colorname" = "purple" ]; then
+  echo "test"
+  welcometext=$purple
+fi
 
 #output
 printf '%s\n' "
@@ -53,3 +92,8 @@ printf '%s\n' "
 
   welcome to ${welcometext}${host}${reset}, ${welcometext}${USER}${reset}
 "
+
+if [ ! -z $color ]
+then
+  echo "You chose the color %s\n" "$color"
+fi
