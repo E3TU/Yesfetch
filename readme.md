@@ -29,10 +29,23 @@ sudo make install
 ```
 yesfetch
 ```
+**Changing the colors**
+```
+yesfetch blue green
+```
+The first color is for the colored titles on the left(os, kernel, de etc) and the second color is for the welcome text in the bottom.
+
+**Available colors**
+- white
+- red
+- green
+- yellow
+- blue
+- cyan
+- purple
 
 ### Customization
 `yesfetch` can be configured and customized modifying the source, for example:
 ```
 wm = ${wm}
 ```
-
