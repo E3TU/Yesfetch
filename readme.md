@@ -33,7 +33,7 @@ yesfetch
 ```
 yesfetch blue green
 ```
-The first color is for the colored titles on the left(os, kernel, de etc) and the second color is for the welcome text in the bottom.
+The first color is for the colored titles on the left(os, kernel, de etc) and the second color is for the welcome text on the bottom.
 
 **Available colors**
 - white
