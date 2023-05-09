@@ -1,9 +1,10 @@
 #!/bin/sh
 
-#optional arguments
-ARG1=${1:-color1}
-colorname=${2:-}
+#optional arguments for the welcome text color
+infotextcolor=${1:-}
 
+#optional arguments for the info text color
+welcometextcolor=${2:-}
 
 #hostname
 read -r host < /proc/sys/kernel/hostname
@@ -41,43 +42,65 @@ cyan='[36m'
 purple='[35m'
 
 #Default colors
-welcometext=$green
 infotext=$blue
+welcometext=$green
 reset='[0m'
 
+#Infocolors
+if [ "$infotextcolor" = "white" ]; then
+  infotext=$white
+fi
 
-if [ "$colorname" = "white" ]; then
-  echo "test"
+if [ "$infotextcolor" = "red" ]; then
+  infotext=$red
+fi
+
+if [ "$infotextcolor" = "green" ]; then
+  infotext=$green
+fi
+
+if [ "$infotextcolor" = "yellow" ]; then
+  infotext=$yellow
+fi
+
+if [ "$infotextcolor" = "blue" ]; then
+  infotext=$blue
+fi
+
+if [ "$infotextcolor" = "cyan" ]; then
+  infotext=$cyan
+fi
+
+if [ "$infotextcolor" = "purple" ]; then
+  infotext=$purple
+fi
+
+#Welcometext colors
+if [ "$welcometextcolor" = "white" ]; then
   welcometext=$white
 fi
 
-if [ "$colorname" = "red" ]; then
-  echo "test"
+if [ "$welcometextcolor" = "red" ]; then
   welcometext=$red
 fi
 
-if [ "$colorname" = "green" ]; then
-  echo "test"
+if [ "$welcometextcolor" = "green" ]; then
   welcometext=$green
 fi
 
-if [ "$colorname" = "yellow" ]; then
-  echo "test"
+if [ "$welcometextcolor" = "yellow" ]; then
   welcometext=$yellow
 fi
 
-if [ "$colorname" = "blue" ]; then
-  echo "test"
+if [ "$welcometextcolor" = "blue" ]; then
   welcometext=$blue
 fi
 
-if [ "$colorname" = "cyan" ]; then
-  echo "test"
+if [ "$welcometextcolor" = "cyan" ]; then
   welcometext=$cyan
 fi
 
-if [ "$colorname" = "purple" ]; then
-  echo "test"
+if [ "$welcometextcolor" = "purple" ]; then
   welcometext=$purple
 fi
 
